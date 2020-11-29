@@ -68,3 +68,11 @@ const createTupleA = function(a, b, c, ...d) {
     //   }
     return [[a, c], [b, d]] // [ [ 'It', 'could' ], [ 'be', [ 'anyone', 'no one' ] ] ]
 }
+
+
+// default parameters
+const added = function(a, b = 2) {
+    console.log(arguments) // arguments keyword only cares about values explicitly passed in as arguments
+                            // not default values 
+    return a + b
+}
