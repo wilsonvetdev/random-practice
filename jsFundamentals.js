@@ -69,10 +69,19 @@ const createTupleA = function(a, b, c, ...d) {
     return [[a, c], [b, d]] // [ [ 'It', 'could' ], [ 'be', [ 'anyone', 'no one' ] ] ]
 }
 
-
 // default parameters
 const added = function(a, b = 2) {
     console.log(arguments) // arguments keyword only cares about values explicitly passed in as arguments
                             // not default values 
     return a + b
 }
+
+// Array.from - working with array-like object
+
+const constructArray = function() {
+    const arr = Array.from(arguments) // Array.prototype.slice.call(arguments)
+    // [ 'hello', 'there', 'buddy' ]
+    console.log(arr)
+}
+
+// constructArray('hello', 'there', 'buddy')  
