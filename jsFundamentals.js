@@ -126,13 +126,18 @@ const doSomeMath = (num, fn) => { return fn(num)}
 
 // ifElse(true, logTrue, logFalse, 'hi ', 'is ', 'this ', 'working', '?')
 
-// implement reduce
+// implement reduce for addition
 
 const reduce = function(arr, cb, initial) {
     let accumulator = initial
-    for(let i = 0; i < list.length; i++) {
-        cb(list[i], accumulator)
+    for(let i = 0; i < arr.length; i++) {
+        if(i === 0 && accumulator === undefined) {
+            accumulator = arr[0]
+        } else {
+            accumulator = cb(arr[i], accumulator)
+        }
     }
-
     return accumulator
 }
+
+console.log(reduce([1, 2, 3], (v, sum) => v + sum))
