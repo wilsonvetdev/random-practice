@@ -90,12 +90,12 @@ const constructArray = function() {
 // higher-order functions can take a function as an input
 // returns a function as the output
 
-const ifElse = (condition, isTrueFn, isFalseFn) => {
-    return condition ? isTrueFn() : isFalseFn()
-}
+// const ifElse = (condition, isTrueFn, isFalseFn) => {
+//     return condition ? isTrueFn() : isFalseFn()
+// }
 
-const logTrue = () => { console.log(true) }
-const logFalse = () => { console.log(false) }
+// const logTrue = () => { console.log(true) }
+// const logFalse = () => { console.log(false) }
 
 // console.log(ifElse(true, logTrue, logFalse))
 
@@ -104,3 +104,35 @@ const square = num => { return num * num }
 const doSomeMath = (num, fn) => { return fn(num)}
 
 // console.log(doSomeMath(5, square), doSomeMath(4, increment))
+
+// passing arguments 
+// const ifElse = (condition, isTrueFn, isFalseFn, parameter) => {
+//     return condition ? isTrueFn(parameter) : isFalseFn(parameter)
+// }
+
+// const ifElse = (condition, isTrueFn, isFalseFn, parameter, ...args) => {
+//     // args = looks like [...args]
+//     return condition ? isTrueFn(parameter) : isFalseFn(parameter)
+// }
+
+// const ifElse = function(condition, isTrue, isFalse) {
+//     const args = [].slice.call(arguments, 3)
+//     console.log(args) The apply() method accepts arguments in an array:
+//     return condition ? isTrue.apply(this, [args]) : isFalse.apply(this, [args])
+// }
+
+// const logTrue = (msgs) => { console.log(msgs) }
+// const logFalse = (msgs) => { console.log(msgs) }
+
+// ifElse(true, logTrue, logFalse, 'hi ', 'is ', 'this ', 'working', '?')
+
+// implement reduce
+
+const reduce = function(arr, cb, initial) {
+    let accumulator = initial
+    for(let i = 0; i < list.length; i++) {
+        cb(list[i], accumulator)
+    }
+
+    return accumulator
+}
