@@ -99,3 +99,8 @@ const logFalse = () => { console.log(false) }
 
 // console.log(ifElse(true, logTrue, logFalse))
 
+const increment = num => { return num + 1 }
+const square = num => { return num * num }
+const doSomeMath = (num, fn) => { return fn(num)}
+
+// console.log(doSomeMath(5, square), doSomeMath(4, increment))
