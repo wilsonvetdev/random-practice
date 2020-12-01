@@ -85,3 +85,17 @@ const constructArray = function() {
 }
 
 // constructArray('hello', 'there', 'buddy')  
+
+// ## Higher-Order Functions
+// higher-order functions can take a function as an input
+// returns a function as the output
+
+const ifElse = (condition, isTrueFn, isFalseFn) => {
+    return condition ? isTrueFn() : isFalseFn()
+}
+
+const logTrue = () => { console.log(true) }
+const logFalse = () => { console.log(false) }
+
+// console.log(ifElse(true, logTrue, logFalse))
+
