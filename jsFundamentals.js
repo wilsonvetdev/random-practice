@@ -140,4 +140,91 @@ const reduce = function(arr, cb, initial) {
     return accumulator
 }
 
-console.log(reduce([1, 2, 3], (v, sum) => v + sum))
+// console.log(reduce([1, 2, 3], (v, sum) => v + sum))
+
+
+// Get all the rooms that no-one has been in
+const newDevelopment = [
+    {
+        name: 'Miss Scarlet',
+        present: true,
+        rooms: [
+            {kitchen: false},
+            {ballroom: false},
+            {conservatory: true},
+            {'dining room': true},
+            {'billiard room': false},
+            {library: true}
+        ]
+    },
+    {
+        name: 'Reverend Green',
+        present: true,
+        rooms: [
+            {kitchen: true},
+            {ballroom: false},
+            {conservatory: false},
+            {'dining room': false},
+            {'billiard room': true},
+            {library: false}
+        ]
+    },
+    {
+        name: 'Colonel Mustard',
+        present: true,
+        rooms: [
+            {kitchen: false},
+            {ballroom: false},
+            {conservatory: true},
+            {'dining room': false},
+            {'billiard room': true},
+            {library: false}
+        ]
+    },
+    {
+        name: 'Professor Plum',
+        present: true,
+        rooms: [
+            {kitchen: true},
+            {ballroom: false},
+            {conservatory: false},
+            {'dining room': true},
+            {'billiard room': false},
+            {library: false}
+        ]
+    }
+]
+
+// Advanced Scope
+
+const myAlert = () => {
+    const x = 'Hello'
+    let count = 0
+    const alerter = () => {
+        alert(`${x} ${++count}`)
+    }
+
+    return alerter
+}
+
+const funcAlert = myAlert() // returns alerter
+const funcAlert2 = myAlert() // returns alerter, creates a new execution context - which means count will be 0 and seperate form above funcAlert
+funcAlert() // goes into alerter function body, alert message = 'Hello, 1'
+funcAlert() // goes into alerter function body, retains the same execution context, which means the alert message = 'Hello, 2'
+
+const newClue = name => {
+    const length = name.length 
+
+    return (weapon) => {
+        let clue = length + weapon.length 
+        return !!(clue % 1)
+    }
+}
+
+const didHeDoItWithA = newClue('Mr.Green')
+// didHeDoItWithA looks like:
+
+// (weapon) => {
+//     let clue = length + weapon.length // length is being retained as 'Mr.Green'.length always
+//     return !!(clue % 1)
+// }
