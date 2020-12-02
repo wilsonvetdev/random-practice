@@ -195,29 +195,34 @@ const newDevelopment = [
     }
 ]
 
-// Advanced Scope
+// Advanced Scope, Closure
 
-const myAlert = () => {
-    const x = 'Hello'
-    let count = 0
-    const alerter = () => {
-        alert(`${x} ${++count}`)
-    }
+// const myAlert = () => {
+//     const x = 'Hello'
+//     let count = 0
+//     const alerter = () => {
+//         alert(`${x} ${++count}`)
+//     }
 
-    return alerter
-}
+//     return alerter
+// }
 
-const funcAlert = myAlert() // returns alerter
-const funcAlert2 = myAlert() // returns alerter, creates a new execution context - which means count will be 0 and seperate form above funcAlert
-funcAlert() // goes into alerter function body, alert message = 'Hello, 1'
-funcAlert() // goes into alerter function body, retains the same execution context, which means the alert message = 'Hello, 2'
+// const funcAlert = myAlert() // returns alerter
+// const funcAlert2 = myAlert() // returns alerter, creates a new execution context - which means count will be 0 and seperate form above funcAlert
+// funcAlert() // goes into alerter function body, alert message = 'Hello, 1'
+// funcAlert() // goes into alerter function body, retains the same execution context, which means the alert message = 'Hello, 2'
 
 const newClue = name => {
     const length = name.length 
 
-    return (weapon) => {
-        let clue = length + weapon.length 
-        return !!(clue % 1)
+    // return (weapon) => {
+    //     let clue = length + weapon.length 
+    //     return !!(clue % 1)
+    // }
+
+    return {
+        log: () => console.log(`${name} is ${length} characters long`),
+        greet: () => console.log(`Hi, I am ${name}.`)
     }
 }
 
@@ -225,6 +230,24 @@ const didHeDoItWithA = newClue('Mr.Green')
 // didHeDoItWithA looks like:
 
 // (weapon) => {
-//     let clue = length + weapon.length // length is being retained as 'Mr.Green'.length always
+//     let clue = length + weapon.length // length is being retained as 'Mr.Green'.length always from the parent scope
 //     return !!(clue % 1)
 // }
+
+let newLog = newClue('wilson')
+let newLogA = newClue('sally')
+
+// another example of closure
+const makeTimer = () => {
+    let elapsed = 0 
+
+    const stopwatch = () => { return elapsed }
+    const increase = () => elapsed++
+
+    setInterval(increase, 1000)
+
+    return stopwatch
+}
+
+let timer = makeTimer()
+
