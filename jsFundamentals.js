@@ -249,5 +249,27 @@ const makeTimer = () => {
     return stopwatch
 }
 
-let timer = makeTimer()
+// let timer = makeTimer()
 
+// Currying
+
+const consider = name => {
+    return `I think it could be ... ${name}`
+}
+
+const exclaim = statement => {
+    return `${statement.toUpperCase()}`
+}
+
+const compose = (fn, fn2, arg) => {
+
+    return (arg) => {
+        const result = fn2(arg)
+        return fn(result)
+    } 
+
+}
+
+const blame = compose(consider, exclaim)
+
+console.log(blame('you'))
