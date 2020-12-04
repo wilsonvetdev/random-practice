@@ -292,7 +292,7 @@ let str = 'hello';
 
 let pet = 'Narwhal';
 pet = 'The Kraken';
-console.log(pet); // ?  --> 'The Kranken'
+// console.log(pet); // ?  --> 'The Kranken'
 // this here is a classic re-assignment of value to the same variable, and not mutating a primitive value.
 // Variables are not values.
 // Variables are pointers - they point to values.
