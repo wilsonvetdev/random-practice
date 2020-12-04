@@ -272,4 +272,27 @@ const compose = (fn, fn2, arg) => {
 
 const blame = compose(consider, exclaim)
 
-console.log(blame('you'))
+// console.log(blame('you'))
+
+// setting a variable called reaction to equal to 'yikes'
+let reaction = 'yikes'
+reaction[0] = 'l' 
+// - this line is trying to re-assign the first letter of 'yikes'
+// will throw an error? or will it assign a property of '0' to reaction, with a value of 'l'?
+// console.log(reaction) // still 'yikes' // primitive values are immutable
+
+// Strings (which are primitive) and arrays (which are not — they’re objects!) have some superficial similarities. 
+// An array is a sequence of items, and a string is a sequence of characters:
+
+let arr = [212, 8, 506];
+let str = 'hello';
+// You can access the first array item similarly to how you would access a string’s first character. It almost feels like strings are arrays (but they’re not!):
+// console.log(arr[0]); // 212
+// console.log(str[0]); // "h"
+
+let pet = 'Narwhal';
+pet = 'The Kraken';
+console.log(pet); // ?  --> 'The Kranken'
+// this here is a classic re-assignment of value to the same variable, and not mutating a primitive value.
+// Variables are not values.
+// Variables are pointers - they point to values.
