@@ -36,3 +36,25 @@ const bubbleSort = nums => {
     } while(swapped)
 
 }
+
+#### Insertion Sort
+
+More complex. Worse case scenario for it is similar to bubble sort's, 
+but its best case makes it suited for when the list is almost sorted or likely already sorted.
+
+[10, 5, 3, 8, 7]
+[5, 10, 3, 8, 7]
+[3, 5, 10, 8, 7]
+[3, 5, 8, 10, 7]
+[3, 5, 7, 8, 10]
+
+const insertionSort = nums => {  
+  for (let i = 1; i < nums.length; i++) {
+    for (let j = 0; j < i; j++) {  
+      if (nums[i] < nums[j]) { 
+        let spliced = nums.splice(i, 1)
+        nums.splice(j, 0, spliced[0])
+      }
+    }
+  }
+};
