@@ -1,5 +1,7 @@
 # Notes
 
+
+
 #### Recursion
 Recursion is when you define something in terms of itself.
 ex. a function that calls itself
@@ -41,6 +43,8 @@ const bubbleSort = nums => {
 
 More complex. Worse case scenario for it is similar to bubble sort's, 
 but its best case makes it suited for when the list is almost sorted or likely already sorted.
+Think of the original array as two sub-arrays -> sorted and unsorted arrays.
+The first element will always be sorted.
 
 [10, 5, 3, 8, 7]
 [5, 10, 3, 8, 7]
@@ -58,3 +62,4 @@ const insertionSort = nums => {
     }
   }
 };
+
