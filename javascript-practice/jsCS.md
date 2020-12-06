@@ -3,6 +3,8 @@ http://btholt.github.io/four-semesters-of-cs/
 
 ### Space & Time Complexity
 
+Big O Notation -  worst-case scenario
+
 Space Complexity - How much memory is used?
 Time Complexity - How many primitive operations are executed?
 ...with respect to input size
