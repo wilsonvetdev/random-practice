@@ -25,4 +25,4 @@ function fibonacci(n) {
     }
 };
 
-console.log(fibonacci(20))
+// console.log(fibonacci(20))
