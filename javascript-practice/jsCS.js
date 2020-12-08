@@ -11,11 +11,10 @@
 */
 
 function factorial(n) {
-    if(n < 2) return 1
+    if (n < 2) return 1;
     return n * factorial(n-1)
 }
 
-// find the 
 function fibonacci(n) {
     if(n <= 2) {
         return 1;
@@ -23,7 +22,7 @@ function fibonacci(n) {
     else {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
-};
+}
 
 // console.log(fibonacci(20))
 
@@ -59,6 +58,7 @@ const uniqSort = function(arr) {
 // Task 1: Write a function, times10, that takes an argument, n, and multiples n times 10
 // a simple multiplication fn
 const times10 = n =>  n * 10 
+const times3 = n =>  n * 3
 
 // console.log('~~~~~~~~~~~~~~TASK 1~~~~~~~~~~~~~~')
 // console.log('times10 returns:', times10(9))
@@ -87,19 +87,20 @@ const times10 = n =>  n * 10
 
 // protip: Take advantage of the fact that parameters are saved in the closure as well, just like the cache from the previous example.
 
-const memoizedClosureTimes10 = (cb) => {
+const memoizedClosure = (cb) => {
     const cache = {}
 
-    return n => {
+    return (n) => {
         if(!cache[n]) { //n in(operator) cache also works ex. if(n in cache)
             cache[n] = cb(n)
         }
-        return cache[n]
+        return cache
     }
 
 }
 
-const memoClosureTimes10 = memoizedClosureTimes10(times10);
+const memoClosureTimes10 = memoizedClosure(times10);
+const memoClosureTimes3 = memoizedClosure(times3);
 console.log('~~~~~~~~~~~~~~TASK 3~~~~~~~~~~~~~~');
 try {
     console.log('Task 3 calculated value:', memoClosureTimes10(10));	// calculated
@@ -107,6 +108,9 @@ try {
     console.log(memoClosureTimes10(4))
     console.log(memoClosureTimes10(6))
     console.log(memoClosureTimes10(10))
+    console.log(memoClosureTimes3(3))
+    console.log(memoClosureTimes3(3))
+    console.log(memoClosureTimes3(9))
 } catch(e) {
     console.error('Task 3:', e);
 }

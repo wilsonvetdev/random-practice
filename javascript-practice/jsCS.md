@@ -15,6 +15,12 @@ Recursion is when you define something in terms of itself.
 ex. a function that calls itself
 Mostly associated with fibonacci numbers and factorial numbers.
 
+Typical Recipe for Recursion in 4 steps:
+1. Identify base case(s)/when do you want your loop to stop.
+2. Identify recursive case(s)/the work that you want to do - make sure it gets closer to base case.
+3. Return where appropriate.
+4. Write procedures for each case that bring you closer to the base cases(s).
+
 ### Sorting Algorithms 
 
 #### Bubble Sort
