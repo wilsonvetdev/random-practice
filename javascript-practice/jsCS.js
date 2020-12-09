@@ -10,7 +10,17 @@
     factorial(3) = 6 
 */
 
-function factorial(n) {
+function computeFactorial(num) { // with a loop
+    let result = 1
+
+    for(let i = 2; i <= num; i++) {
+        result *= i
+    }
+
+    return result 
+}
+
+function factorial(n) { // with recursion
     if (n < 2) return 1;
     return n * factorial(n-1)
 }
@@ -25,6 +35,41 @@ function fibonacci(n) {
 }
 
 // console.log(fibonacci(20))
+
+// Task: rewrite this function so that it uses a loop rather than recursion
+
+function joinElements(array, joinString) { // with recursion
+
+    function recurse(index, resultSoFar) {
+    resultSoFar += array[index];
+
+    if(index === array.length - 1) {
+        return resultSoFar;
+    } else {
+        return recurse(index + 1, resultSoFar + joinString);
+    }
+    }
+
+    return recurse(0, '');
+}
+
+console.log(joinElements(['s','cr','t cod', ' :) :)'], 'e'))
+
+// with a loop
+
+const joinElementss = (array, joinString) => {
+
+    let resultSoFar = ''
+
+    for(let i = 0; i < array.length - 1; i++) {
+        resultSoFar += array[i]
+        resultSoFar += joinString
+    }
+
+    return resultSoFar += array[array.length - 1]
+}
+
+console.log(joinElementss(['s','cr','t cod', ' :) :)'], 'e'))
 
 //Task: Transform this simple sorting algorithm into a unique sort. 
 // It should not return any duplicate values in the sorted array.
@@ -101,16 +146,16 @@ const memoizedClosure = (cb) => {
 
 const memoClosureTimes10 = memoizedClosure(times10);
 const memoClosureTimes3 = memoizedClosure(times3);
-console.log('~~~~~~~~~~~~~~TASK 3~~~~~~~~~~~~~~');
-try {
-    console.log('Task 3 calculated value:', memoClosureTimes10(10));	// calculated
-    console.log('Task 3 cached value:', memoClosureTimes10(10));	// cached
-    console.log(memoClosureTimes10(4))
-    console.log(memoClosureTimes10(6))
-    console.log(memoClosureTimes10(10))
-    console.log(memoClosureTimes3(3))
-    console.log(memoClosureTimes3(3))
-    console.log(memoClosureTimes3(9))
-} catch(e) {
-    console.error('Task 3:', e);
-}
+// console.log('~~~~~~~~~~~~~~TASK 3~~~~~~~~~~~~~~');
+// try {
+//     console.log('Task 3 calculated value:', memoClosureTimes10(10));	// calculated
+//     console.log('Task 3 cached value:', memoClosureTimes10(10));	// cached
+//     console.log(memoClosureTimes10(4))
+//     console.log(memoClosureTimes10(6))
+//     console.log(memoClosureTimes10(10))
+//     console.log(memoClosureTimes3(3))
+//     console.log(memoClosureTimes3(3))
+//     console.log(memoClosureTimes3(9))
+// } catch(e) {
+//     console.error('Task 3:', e);
+// }
