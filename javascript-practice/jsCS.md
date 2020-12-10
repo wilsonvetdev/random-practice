@@ -21,6 +21,16 @@ Typical Recipe for Recursion in 4 steps:
 3. Return where appropriate.
 4. Write procedures for each case that bring you closer to the base cases(s).
 
+#### Divide and Conquer
+
+Binary Search - Search for a value in a sorted array by cutting the side of the search area in half.
+
+Recursive calls to a subset of the problem
+Recognize base case
+Divide: Break problem down during each call
+Conquer: Do work on each subset
+Combine: Solutions
+
 ### Sorting Algorithms 
 
 #### Bubble Sort

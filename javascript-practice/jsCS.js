@@ -53,7 +53,7 @@ function joinElements(array, joinString) { // with recursion
     return recurse(0, '');
 }
 
-console.log(joinElements(['s','cr','t cod', ' :) :)'], 'e'))
+// console.log(joinElements(['s','cr','t cod', ' :) :)'], 'e'))
 
 // with a loop
 
@@ -69,7 +69,7 @@ const joinElementss = (array, joinString) => {
     return resultSoFar += array[array.length - 1]
 }
 
-console.log(joinElementss(['s','cr','t cod', ' :) :)'], 'e'))
+// console.log(joinElementss(['s','cr','t cod', ' :) :)'], 'e'))
 
 //Task: Transform this simple sorting algorithm into a unique sort. 
 // It should not return any duplicate values in the sorted array.
@@ -159,3 +159,45 @@ const memoClosureTimes3 = memoizedClosure(times3);
 // } catch(e) {
 //     console.error('Task 3:', e);
 // }
+
+// TASK: Linear Search exercise
+
+function linearSearch(list, item) {
+    // loop through the list and compare the item to each element of the list
+    // if item === list[i], then return the list[i]
+    for(let i = 0; i < list.length; i++) {
+        if(item === list[i]) {
+            return list[i]
+        }
+    }
+
+}
+
+// console.log(linearSearch([2, 6, 7, 90, 103], 90))
+
+// Binary Search 
+
+function binarySearch(list, item) {
+    let min = 0
+    let max = list.length - 1 
+    let guess;
+
+    while(min <= max) {
+        guess = Math.floor((min + max) / 2)
+        
+        if(list[guess] === item) {
+            return guess
+        }
+        if (list[guess] < item) {  
+            min = guess + 1
+        } else {
+            max = guess - 1
+        }
+        
+    }
+
+    return -1 
+
+}
+
+// console.log(binarySearch([2, 3, 6, 7, 9, 10, 56, 78, 101, 500, 600], 101))
