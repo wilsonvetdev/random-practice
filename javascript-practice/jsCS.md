@@ -89,6 +89,17 @@ const insertionSort = nums => {
 
 #### Merge Sort
 
+Concept
+Step 1 - Divide input into 'n' single element subarrays
+Step 2 - Repeatedly merge subarrays and sort on each merge
+
+mergeSort(list)
+  base case: if list.length < 2, return 
+  break the list into halves L & R
+  Lsorted = mergeSort(L)
+  Rsorted = mergeSort(R)
+  return merge(Lsorted, Rsorted)
+
 https://codepen.io/btholt/pen/rOEdKK?editors=001
 
 A divide and conquer algorithm. Recursive.
@@ -138,26 +149,26 @@ The base case is when you have a list of length 1 or 0, where you just return th
 (back into the original function call)
 -> call concat on [3, 4], 5, and [9]
 -> return [3, 4, 5, 9]
- 
- ### Set
 
- A set allows at least four things: add, remove, contains, and toList.
- The basic idea is that you can add items to a set and then later check if they are there.
- You can request later a list of those items in the set(no guaranteed order).
- Useful for deduplication since you can only add something to a set once. 
+### Set
 
- ### Map
+A set allows at least four things: add, remove, contains, and toList.
+The basic idea is that you can add items to a set and then later check if they are there.
+You can request later a list of those items in the set(no guaranteed order).
+Useful for deduplication since you can only add something to a set once. 
 
- Key-Value pairs, similar to JavaScript objcts.
- Don't have prototypes, inheritance, methods.
- No guaranteed order of data.
- Keys have to be unique.
+### Map
 
- ### Stack
+Key-Value pairs, similar to JavaScript objcts.
+Don't have prototypes, inheritance, methods.
+No guaranteed order of data.
+Keys have to be unique.
 
- First In Last Out 
+### Stack
 
- ### Queue
+First In Last Out 
 
- Fist In First Out 
+### Queue
+
+Fist In First Out 
 
