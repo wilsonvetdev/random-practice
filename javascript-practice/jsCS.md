@@ -10,7 +10,7 @@ Time Complexity - How many primitive operations are executed?
 ...with respect to input size
 ...and assuming worst case scenarios 
 
-#### Recursion
+### Recursion
 Recursion is when you define something in terms of itself.
 ex. a function that calls itself
 Mostly associated with fibonacci numbers and factorial numbers.
@@ -150,25 +150,34 @@ The base case is when you have a list of length 1 or 0, where you just return th
 -> call concat on [3, 4], 5, and [9]
 -> return [3, 4, 5, 9]
 
-### Set
+#### Set
 
 A set allows at least four things: add, remove, contains, and toList.
 The basic idea is that you can add items to a set and then later check if they are there.
 You can request later a list of those items in the set(no guaranteed order).
 Useful for deduplication since you can only add something to a set once. 
 
-### Map
+#### Map
 
 Key-Value pairs, similar to JavaScript objcts.
 Don't have prototypes, inheritance, methods.
 No guaranteed order of data.
 Keys have to be unique.
 
-### Stack
+#### Stack
 
 First In Last Out 
 
-### Queue
+#### Queue
 
 Fist In First Out 
 
+### Greedy Algorithms
+Always makes the locally optimal choice. Not always the best solution.
+ 
+### Brute Force Approach:
+calculate every single combination possible and keep track of the minimum
+
+### Dynamic Approach: 
+cache values to avoid repeated calculations
+qualities: overlapping subproblems, optimal substructure(tends to be recursive)

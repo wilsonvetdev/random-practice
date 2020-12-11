@@ -201,3 +201,33 @@ function binarySearch(list, item) {
 }
 
 // console.log(binarySearch([2, 3, 6, 7, 9, 10, 56, 78, 101, 500, 600], 101))
+
+
+// Write a function, makeChange, that returns an integer that represents the least number of coins that add up
+// to an amount where the amount is always divisible by 5.
+
+// Greedy solution to this is to simply choose the largest coin first.
+
+const makeChange = (coins, amount) => {
+    coins.sort((a, b) => b - a) // sort the array of coins into descending order
+    let coinTotal = 0  // coin counter
+    let i = 0  // index
+
+    while (amount > 0) {
+        if (coins[i] <= amount) {
+            amount -= coins[i]
+            coinTotal++
+        } else {  // if current coin is less than or equal to the amount, mins from amount and increment coin counter
+            i++   // else move on to the next coin in the array, repeat until amount reaches 0.
+        }
+    }
+
+    return coinTotal
+
+}
+
+// console.log(makeChange([5, 10, 25], 50))
+// Would these values work with the greedy solution? coin values: 1, 6, 10, inputAmount: 12
+
+// Brute Force Approach: calculate every single combination possible and keep track of the minimum
+// Dynamic Approach: cache values to avoid repeated calculations
