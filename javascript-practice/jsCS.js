@@ -243,6 +243,7 @@ class ArrayList {
     push(value) {
         this.data[this.length] = value
         this.length++
+        return this.data
     }
 
     pop() {
@@ -258,6 +259,12 @@ class ArrayList {
 
     delete(index) {
         this.data[index] = undefined
+        this.length--
+        for(let key in this.data) {
+            if(this.data[key] === undefined) {
+                delete this.data[key]
+            }
+        }
         this._collapseTo(index)
         return this.data
     }
@@ -280,7 +287,11 @@ array.push('grape')
 array.push('mango')
 console.log(array)
 // console.log('return value of popped ---->', array.pop())
-console.log(array.delete(2))
+console.log('DELETED index 3', array.delete(3))
+console.log('DELETED index 1', array.delete(1))
+console.log('PUSHING', array.push('rice'))
+console.log('PUSHING', array.length)
+
 
 // Lone Integer Exercise
 // You are given a list of integers nums where each integer occurs exactly three times except for one which occurs once. Return the lone integer.
