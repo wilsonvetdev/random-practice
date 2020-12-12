@@ -258,10 +258,16 @@ class ArrayList {
 
     delete(index) {
         this.data[index] = undefined
+        this._collapseTo(index)
+        return this.data
     }
 
     _collapseTo(index) {
-
+        // {0:"apple", 1:"banana", 2:"pear", 3:"grape", 4:"mango", 5: "melon"}
+        // {0:"apple", 1:"banana", 2:undefined, 3:"grape", 4:"mango", 5: "melon"}
+        for(let i = index; i < this.length; i++) {
+            this.data[i] = this.data[i + 1]
+        }
     }
 
 }
@@ -269,9 +275,12 @@ class ArrayList {
 let array = new ArrayList 
 array.push('apple')
 array.push('banana')
+array.push('pear')
+array.push('grape')
+array.push('mango')
 console.log(array)
-console.log('return value of popped ---->', array.pop())
-console.log(array)
+// console.log('return value of popped ---->', array.pop())
+console.log(array.delete(2))
 
 // Lone Integer Exercise
 // You are given a list of integers nums where each integer occurs exactly three times except for one which occurs once. Return the lone integer.
@@ -281,54 +290,54 @@ console.log(array)
 // Input: nums = [2, 2, 2, 9, 5, 5, 5]
 // Output: 9
 
-class Solution {
-    solve(nums) {
-        let cache = {}
-        for(const num of nums) {
-            if(!cache[num]) {
-                cache[num] = 1
-            } else {
-                cache[num]++
-            }
-        }
+// class Solution {
+//     solve(nums) {
+//         let cache = {}
+//         for(const num of nums) {
+//             if(!cache[num]) {
+//                 cache[num] = 1
+//             } else {
+//                 cache[num]++
+//             }
+//         }
         
-        for(const key in cache) {
-            if(cache[key] === 1) {
-                return Number(key)
-            }
-        }
+//         for(const key in cache) {
+//             if(cache[key] === 1) {
+//                 return Number(key)
+//             }
+//         }
         
-        return cache
-    }
-}
+//         return cache
+//     }
+// }
 
-// Given a positve integer n, find the length of its Collatz sequence. The Collatz sequence is generated sequentially where
+// // Given a positve integer n, find the length of its Collatz sequence. The Collatz sequence is generated sequentially where
 
-// n = n / 2 if n is even
-// n = 3 * n + 1 if n is odd
+// // n = n / 2 if n is even
+// // n = 3 * n + 1 if n is odd
 
-class Solution {
-    solve(n) {
-        let array = [n]
+// class Solution {
+//     solve(n) {
+//         let array = [n]
         
-        // given a positive integer
-        // I think a while a loop will be good here
-        // while the last value of the array is not 1, keep looping
-        // inside the loop - do the work checking to see if n is even or odd
-        // if even, n = n / 2 and push to the array
-        // if odd, 3 * n + 1 and push to the array
-        // at the end, return the length of the entire array
+//         // given a positive integer
+//         // I think a while a loop will be good here
+//         // while the last value of the array is not 1, keep looping
+//         // inside the loop - do the work checking to see if n is even or odd
+//         // if even, n = n / 2 and push to the array
+//         // if odd, 3 * n + 1 and push to the array
+//         // at the end, return the length of the entire array
         
-        while(n !== 1) {
-            if(n % 2 === 0) {
-                n = n / 2
-            } else {
-                n = (3 * n + 1)
-            }
-                array.push(n) 
-        }
+//         while(n !== 1) {
+//             if(n % 2 === 0) {
+//                 n = n / 2
+//             } else {
+//                 n = (3 * n + 1)
+//             }
+//                 array.push(n) 
+//         }
         
-        return array.length
-    }
+//         return array.length
+//     }
     
-}
+// }
