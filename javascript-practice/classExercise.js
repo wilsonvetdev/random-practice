@@ -125,8 +125,9 @@ const findCourse = (prereqs) => {
   
   // return classArray[num] <-- original naive answer I had, which only worked for the first test case.
 
-  return classArray.length % 2 === 0 ? classArray[num-1] : classArray[num]
-
+  return classArray.length % 2 === 0 ? classArray[num-1] : classArray[num] //if classArray is even, we want to return the first 'middle class'
+  // ['Data Structures', 'Algorithms', 'Foundations of Computer Science', 'Logic'] --> 'Algorithms' and 'Foundations of CS' is the two 'middle class'
+    // but we want the first one, so we evaluate 4 / 2 = 2, and always do classArray[middle number(2 in this case) - 1] which will evaluate to 'Algorithms'
 }
 
-console.log(findCourse(prereqs_courses3))
+console.log(findCourse(prereqs_courses2))
