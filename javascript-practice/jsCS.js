@@ -231,3 +231,73 @@ const makeChange = (coins, amount) => {
 
 // Brute Force Approach: calculate every single combination possible and keep track of the minimum
 // Dynamic Approach: cache values to avoid repeated calculations
+
+// Array Exercise 
+
+class ArrayList {
+    constructor() {
+        this.length = 0
+        this.data = {}
+    }
+
+    push(value) {
+        this.data[this.length] = value
+        this.length++
+    }
+
+    pop() {
+        let poppedValue = this.data[this.length - 1]
+        this.data[this.length - 1] = undefined
+        this.length--
+        return poppedValue
+    }
+
+    get(index) {
+        return this.data[index]
+    }
+
+    delete(index) {
+        this.data[index] = undefined
+    }
+
+    _collapseTo(index) {
+
+    }
+
+}
+
+let array = new ArrayList 
+array.push('apple')
+array.push('banana')
+console.log(array)
+console.log('return value of popped ---->', array.pop())
+console.log(array)
+
+// Lone Integer Exercise
+// You are given a list of integers nums where each integer occurs exactly three times except for one which occurs once. Return the lone integer.
+// Constraints:
+// n ≤ 100,000 where n is length of nums
+// Example 1: 
+// Input: nums = [2, 2, 2, 9, 5, 5, 5]
+// Output: 9
+
+class Solution {
+    solve(nums) {
+        let cache = {}
+        for(const num of nums) {
+            if(!cache[num]) {
+                cache[num] = 1
+            } else {
+                cache[num]++
+            }
+        }
+        
+        for(const key in cache) {
+            if(cache[key] === 1) {
+                return Number(key)
+            }
+        }
+        
+        return cache
+    }
+}

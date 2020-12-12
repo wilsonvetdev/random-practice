@@ -166,11 +166,11 @@ Keys have to be unique.
 
 #### Stack
 
-First In Last Out 
+First In Last Out/Last In First Out - like a stack of books
 
 #### Queue
 
-Fist In First Out 
+Fist In First Out - a line to order food at McDonalds
 
 ### Greedy Algorithms
 Always makes the locally optimal choice. Not always the best solution.
@@ -181,3 +181,6 @@ calculate every single combination possible and keep track of the minimum
 ### Dynamic Approach: 
 cache values to avoid repeated calculations
 qualities: overlapping subproblems, optimal substructure(tends to be recursive)
+
+#### Array
+quick with gets, but deletes and inserts(in the middle) could be expensive
