@@ -301,3 +301,34 @@ class Solution {
         return cache
     }
 }
+
+// Given a positve integer n, find the length of its Collatz sequence. The Collatz sequence is generated sequentially where
+
+// n = n / 2 if n is even
+// n = 3 * n + 1 if n is odd
+
+class Solution {
+    solve(n) {
+        let array = [n]
+        
+        // given a positive integer
+        // I think a while a loop will be good here
+        // while the last value of the array is not 1, keep looping
+        // inside the loop - do the work checking to see if n is even or odd
+        // if even, n = n / 2 and push to the array
+        // if odd, 3 * n + 1 and push to the array
+        // at the end, return the length of the entire array
+        
+        while(n !== 1) {
+            if(n % 2 === 0) {
+                n = n / 2
+            } else {
+                n = (3 * n + 1)
+            }
+                array.push(n) 
+        }
+        
+        return array.length
+    }
+    
+}
