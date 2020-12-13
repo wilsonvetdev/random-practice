@@ -259,12 +259,6 @@ class ArrayList {
 
     delete(index) {
         this.data[index] = undefined
-        this.length--
-        for(let key in this.data) {
-            if(this.data[key] === undefined) {
-                delete this.data[key]
-            }
-        }
         this._collapseTo(index)
         return this.data
     }
@@ -274,6 +268,10 @@ class ArrayList {
         // {0:"apple", 1:"banana", 2:undefined, 3:"grape", 4:"mango", 5: "melon"}
         for(let i = index; i < this.length; i++) {
             this.data[i] = this.data[i + 1]
+            if(this.data[i] === undefined) {
+                delete this.data[i]
+                this.length--
+            }
         }
     }
 
@@ -290,7 +288,10 @@ console.log(array)
 console.log('DELETED index 3', array.delete(3))
 console.log('DELETED index 1', array.delete(1))
 console.log('PUSHING', array.push('rice'))
-console.log('PUSHING', array.length)
+console.log('PUSHING', array.push('ricecake'))
+console.log('PUSHING', array.push('pork'))
+console.log('ARRAY LENGTH --->', array.length)
+console.log(array.pop())
 
 
 // Lone Integer Exercise
