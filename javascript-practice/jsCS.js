@@ -248,7 +248,7 @@ class ArrayList {
 
     pop() {
         let poppedValue = this.data[this.length - 1]
-        this.data[this.length - 1] = undefined
+        delete this.data[this.length-1]
         this.length--
         return poppedValue
     }
@@ -284,7 +284,7 @@ array.push('pear')
 array.push('grape')
 array.push('mango')
 console.log(array)
-// console.log('return value of popped ---->', array.pop())
+console.log('return value of popped ---->', array.pop())
 console.log('DELETED index 3', array.delete(3))
 console.log('DELETED index 1', array.delete(1))
 console.log('PUSHING', array.push('rice'))
