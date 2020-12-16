@@ -184,3 +184,8 @@ qualities: overlapping subproblems, optimal substructure(tends to be recursive)
 
 #### Array
 quick with gets, but deletes and inserts(in the middle) could be expensive
+
+#### Linked List
+Head Node, Tail Node, 
+Expensive Gets/Search(O(n)) - we are given Head Node and have to loop until we find a given node for getting data.
+Deletes are O(1) after getting the node.
