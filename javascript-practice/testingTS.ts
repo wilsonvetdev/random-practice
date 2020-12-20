@@ -1,5 +1,7 @@
-let variableMustBeNumber:number
+const sayAge = () => 18
 
-variableMustBeNumber = 'not a number'
+const myAge = (fn):number => {
+    return sayAge()
+  }
 
-console.log(variableMustBeNumber)
+  console.log(myAge(sayAge))
