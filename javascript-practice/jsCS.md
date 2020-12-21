@@ -184,11 +184,14 @@ qualities: overlapping subproblems, optimal substructure(tends to be recursive)
 
 #### Array
 quick with gets, but deletes and inserts(in the middle) could be expensive
+organizes items sequentially in memory
 
 #### Linked List
 Head Node, Tail Node, 
 Expensive Gets/Search(O(n)) - we are given Head Node and have to loop until we find a given node for getting data.
 Deletes are O(1) after getting the node.
+
+Could be singly-linked or doubly-linked list(just one extra pointer to point to previous node )
 
 #### Graph
 Elements inside a graph are nodes - may or may not be related to each other.
@@ -199,3 +202,9 @@ Connected graphs vs graphs that are not connected
 Directed graphs vs undirected graphs
 
 depth-first, breadth-first search
+
+#### Hash Tables
+organizes data for quick look-up on values for a given key
+unordered
+single-directional lookups
+resizes when the hash table is 50% full, rehashes everything and double in size.
