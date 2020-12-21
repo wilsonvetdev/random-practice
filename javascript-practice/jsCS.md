@@ -189,3 +189,8 @@ quick with gets, but deletes and inserts(in the middle) could be expensive
 Head Node, Tail Node, 
 Expensive Gets/Search(O(n)) - we are given Head Node and have to loop until we find a given node for getting data.
 Deletes are O(1) after getting the node.
+
+#### Graph
+Elements inside a graph are nodes - may or may not be related to each other.
+Every node can also be called a vertex or vertices for multiple nodes.
+Edges are the connections. 
