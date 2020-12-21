@@ -194,3 +194,8 @@ Deletes are O(1) after getting the node.
 Elements inside a graph are nodes - may or may not be related to each other.
 Every node can also be called a vertex or vertices for multiple nodes.
 Edges are the connections. 
+
+Connected graphs vs graphs that are not connected
+Directed graphs vs undirected graphs
+
+depth-first, breadth-first search
