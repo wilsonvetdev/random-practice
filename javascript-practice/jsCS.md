@@ -172,6 +172,12 @@ First In Last Out/Last In First Out - like a stack of books
 
 Fist In First Out - a line to order food at McDonalds
 
+Supports three main operations = enqueue, dequeue, peek
+
+gives you the option of creating bounded queues with a .maxSize property
+
+prevents queue overflow and underflow by keeping track of the queue size
+
 Queues Implementation
 Queues can be implemented using a linked list as the underlying data structure. The front of the queue is equivalent to the head node of a linked list and the back of the queue is equivalent to the tail node.
 
