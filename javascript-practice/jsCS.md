@@ -168,6 +168,14 @@ Keys have to be unique.
 
 First In Last Out/Last In First Out - like a stack of books
 
+A stack is a data structure which contains an ordered set of data.
+
+Stacks provide three methods for interaction:
+
+Push - adds data to the “top” of the stack
+Pop - returns and removes data from the “top” of the stack
+Peek - returns data from the “top” of the stack without removing it
+
 #### Queue
 
 Fist In First Out - a line to order food at McDonalds
