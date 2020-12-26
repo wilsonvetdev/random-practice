@@ -257,3 +257,20 @@ and are another way of storing information.
 Specifically, trees are used for data that has a hierarchical structure, such as a family tree or a computer’s file system. 
 The tree data structure you are going to create is an excellent foundation for further variations on trees, 
 including AVL trees, red-black trees, and binary trees - which you will actually create in a lesson later on!
+
+depth-first traversal, breadth-first traversal
+
+depthFirstTraversal() {
+    console.log(this.data);
+    this.children.forEach(child => child.depthFirstTraversal());
+}
+
+breadthFirstTraversal() {
+  let queue = [this]
+
+  while(queue.length > 0) {
+    const current = queue.shift()
+    console.log(current.data)
+    queue = [...queue, ...current.children]
+  }
+}
