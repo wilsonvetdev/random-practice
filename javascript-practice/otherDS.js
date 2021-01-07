@@ -26,6 +26,7 @@ class Stack {
      * @return {*} the last and newest value in the stack
      */
     pop() {
+        if(!this.size) throw new Error('Nothing in here to pop')
         let value = this._storage[this._size - 1]
         delete this._storage[this._size - 1]
         this._size--
@@ -47,3 +48,5 @@ stack.push(2)
 console.log(stack)
 console.log(stack.pop())
 console.log(stack.peek())
+console.log(stack.pop())
+stack.pop()
