@@ -51,3 +51,4 @@ console.log("peek", stack.peek())
 console.log(stack.pop())
 stack.pop()
 stack.pop()
+
